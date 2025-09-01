@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-slim
-WORKDIR /app
-COPY target/java-cicd-pipeline-1.0.0.jar app.jar
-CMD ["java", "-jar", "app.jar"]
+FROM eclipse-temurin:11-jre-alpine  
+COPY target/myapp-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+EXPOSE 8080
